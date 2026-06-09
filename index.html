@@ -1,87 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Pengujian Perisian | Nurin Syazwani</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { border-bottom: 2px solid #eaecef; padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { margin-bottom: 5px; color: #24292e; }
-        h2 { color: #0366d6; border-bottom: 1px solid #eaecef; padding-bottom: 5px; margin-top: 30px; }
-        .project-card { background: #f6f8fa; border: 1px solid #e1e4e8; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
-        .tag { background: #dbedff; color: #0366d6; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; font-weight: bold; margin-right: 5px; }
-        .btn-link { display: inline-block; background-color: #24292e; color: #fff; padding: 8px 14px; border-radius: 4px; text-decoration: none; font-size: 0.9em; font-weight: bold; margin-top: 10px; margin-right: 10px; }
-        .btn-link:hover { background-color: #0366d6; text-decoration: none; }
-        .btn-secondary { background-color: #0366d6; }
-        a { color: #0366d6; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // JavaScript untuk mengatur perpindahan tab secara dinamis
+        function switchTab(tabId) {
+            // Sembunyikan semua konten seksi
+            document.querySelectorAll('.tab-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Tampilkan seksi yang dipilih
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            // Atur gaya aktif pada tombol navigasi
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('border-indigo-600', 'text-indigo-600', 'bg-indigo-50/50');
+                btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+            });
+            
+            // Aktifkan tombol yang sedang diklik
+            const activeBtn = document.getElementById(tabId + '-btn');
+            activeBtn.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+            activeBtn.classList.add('border-indigo-600', 'text-indigo-600', 'bg-indigo-50/50');
+        }
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
 
-    <header>
-        <h1>Nurin Syazwani Binti Faizal Azmir</h1>
-        <p><strong>Junior Software Tester / QA Engineer</strong></p>
-        <p>📍 Putrajaya, Malaysia | ✉️ nurin0508@gmail.com | 🔗 <a href="https://www.linkedin.com/in/nurinsyazwani" target="_blank">LinkedIn</a></p>
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-6 md:py-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Nurin Syazwani Binti Faizal Azmir</h1>
+                    <p class="text-indigo-600 font-semibold mt-1 text-sm md:text-base">Junior Software Tester / QA Engineer</p>
+                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs md:text-sm text-slate-500 mt-2">
+                        <span>📍 Putrajaya, Malaysia</span>
+                        <span>•</span>
+                        <a href="mailto:nurin0508@gmail.com" class="hover:text-indigo-600 transition">✉️ nurin0508@gmail.com</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/in/nurinsyazwani" target="_blank" class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-4 py-2 rounded-lg transition-all shadow-sm shadow-indigo-100">
+                        🔗 Hubungkan di LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <nav class="flex border-b border-slate-200 mt-6 md:mt-8 -mb-6 overflow-x-auto">
+                <button id="about-tab-btn" onclick="switchTab('about-tab')" class="tab-btn border-b-2 border-indigo-600 text-indigo-600 bg-indigo-50/50 font-medium text-sm px-6 py-3 transition-all whitespace-nowrap rounded-t-lg">
+                    👤 Ringkasan Profil
+                </button>
+                <button id="projects-tab-btn" onclick="switchTab('projects-tab')" class="tab-btn border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 font-medium text-sm px-6 py-3 transition-all whitespace-nowrap rounded-t-lg">
+                    📊 Proyek & Artifak QA
+                </button>
+                <button id="skills-tab-btn" onclick="switchTab('skills-tab')" class="tab-btn border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 font-medium text-sm px-6 py-3 transition-all whitespace-nowrap rounded-t-lg">
+                    🛠️ Keahlian & Sertifikasi
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>Ringkasan Profesional</h2>
-        <p>Graduan Sarjana Muda Sains Komputer (Kejuruteraan Perisian) dengan pengkhususan dan pengalaman praktikal dalam reka bentuk dokumentasi QA, automasi ujian UI (Selenium Java), serta pengujian manual aplikasi web[cite: 2, 4]. Mahir menukarkan keperluan bisnes kepada pelan ujian (Test Plans) yang komprehensif dan penjejakan pepijat kritikal secara berstruktur[cite: 1, 2].</p>
-    </section>
-
-    <section id="projects">
-        <h2>Kes Kajian & Projek Pengujian (Artifacts)</h2>
+    <main class="max-w-4xl w-full mx-auto px-4 py-10 flex-grow">
         
-        <div class="project-card">
-            <h3>1. Dokumentasi QA & Pelan Ujian: Bayou E-Learning Platform</h3>
-            <p><span class="tag">Software Test Plan</span><span class="tag">Profile Management</span><span class="tag">QA Architecture</span></p>
-            <p>Merangka dokumen <strong>Software Test Plan (STP)</strong> yang komprehensif untuk mendefinisikan skop pengujian, strategi, kriteria kemasukan/keluar (Entry/Exit criteria), dan pengurusan risiko bagi Modul Pengurusan Profil Pengguna.</p>
-            <ul>
-                <li><strong>Skop Dokumentasi:</strong> Penetapan persekitaran ujian (Test Environment), strategi automasi, dan matriks tanggungjawab QA[cite: 2].</li>
-            </ul>
-            <a href="https://drive.google.com/file/d/1Q90UKoxbFeY_g5DYOMvhxrcssj4D2wXS/view?usp=sharing" target="_blank" class="btn-link">📄 Buka Software Test Plan (Bayou)</a>
-            <a href="https://github.com/nurynsyaz/Selenium-Automation-Bayou-Elearning" target="_blank" class="btn-link btn-secondary">📁 Lihat Repositori Selenium Automation</a>[cite: 2]
-        </div>
+        <section id="about-tab" class="tab-content space-y-6 animate-fadeIn">
+            <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-xl shadow-sm">
+                <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="h-5 w-1 bg-indigo-600 rounded-full"></span> Ringkasan Profesional
+                </h2>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Graduan Sarjana Muda Sains Komputer (Kejuruteraan Perisian) dengan pengkhususan dan pengalaman praktikal dalam reka bentuk dokumentasi QA, automasi ujian UI (Selenium Java), serta pengujian manual aplikasi web. Mahir menukarkan keperluan bisnes kepada pelan ujian (Test Plans) yang komprehensif dan penjejakan pepijat kritikal secara berstruktur untuk memastikan kestabilan sistem sebelum peluncuran produksi.
+                </p>
+            </div>
+        </section>
 
-        <div class="project-card">
-            <h3>2. Pelaksanaan Ujian & Log Defekt: AcademyBugs E-Commerce</h3>
-            <p><span class="tag">Manual Testing</span><span class="tag">Test Execution</span><span class="tag">Bug Reporting</span><span class="tag">Defect Log</span>[cite: 1, 4]</p>
-            <p>Melaksanakan pengujian fungsional (Black-box) ke atas platform AcademyBugs[cite: 1, 4]. Berjaya mengesan, mengasingkan, dan mendokumentasikan ralat kritikal sistem termasuk isu pengiraan logik transaksi kewangan[cite: 1].</p>
-            <ul>
-                <li><strong>Impak Teknikal:</strong> Log terperinci yang mengandungi langkah reproduksi (Steps to Reproduce) dan klasifikasi tahap keterukan (Severity) untuk memudahkan tugasan pasukan pembangun (Developers)[cite: 1].</li>
-            </ul>
-            <a href="https://drive.google.com/file/d/1cwtwFwDH_6niqtU3CoxdZu8G0rTN8NC4/view?usp=sharing" target="_blank" class="btn-link">📊 Buka QA Test Execution & Defect Log</a>[cite: 1]
-        </div>
-    </section>
+        <section id="projects-tab" class="tab-content space-y-6 hidden">
+            <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:border-slate-300 transition-all">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-md">Software Test Plan</span>
+                    <span class="bg-blue-50 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-md">Profile Management</span>
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-md">QA Architecture</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">1. Dokumentasi QA & Pelan Ujian: Bayou E-Learning Platform</h3>
+                <p class="text-slate-600 text-sm mt-2 mb-4 leading-relaxed">
+                    Merangka dokumen <strong>Software Test Plan (STP)</strong> yang komprehensif untuk mendefinisikan skop pengujian, strategi, kriteria kemasukan/keluar (Entry/Exit criteria), dan pengurusan risiko bagi Modul Pengurusan Profil Pengguna.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://drive.google.com/file/d/1Q90UKoxbFeY_g5DYOMvhxrcssj4D2wXS/view?usp=sharing" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">
+                        📄 Buka Software Test Plan
+                    </a>
+                    <a href="https://github.com/nurynsyaz/Selenium-Automation-Bayou-Elearning" target="_blank" class="border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold px-4 py-2.5 rounded-lg transition">
+                        📁 Lihat Repositori Automation
+                    </a>
+                </div>
+            </div>
 
-    <section id="skills">
-        <h2>Kemahiran Teknikal</h2>
-        <ul>
-            <li><strong>Dokumentasi QA:</strong> Software Test Plan (STP), Test Cases Construction, Defect Logging & Reporting[cite: 4].</li>
-            <li><strong>Alatan Pengujian:</strong> Postman (API), Selenium WebDriver, JUnit, Maven[cite: 4].</li>
-            <li><strong>Pangkalan Data & Bahasa:</strong> Java (Basic), SQL (MySQL), PHP, HTML/CSS[cite: 4].</li>
-        </ul>
-    </section>
+            <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:border-slate-300 transition-all">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-md">Manual Testing</span>
+                    <span class="bg-amber-50 text-amber-700 text-xs font-bold px-2.5 py-1 rounded-md">Bug Reporting</span>
+                    <span class="bg-rose-50 text-rose-700 text-xs font-bold px-2.5 py-1 rounded-md">Defect Log</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">2. Pelaksanaan Ujian & Log Defekt: AcademyBugs E-Commerce</h3>
+                <p class="text-slate-600 text-sm mt-2 mb-4 leading-relaxed">
+                    Melaksanakan pengujian fungsional (Black-box) ke atas platform AcademyBugs. Berjaya mengesan, mengasingkan, dan mendokumentasikan ralat kritikal sistem termasuk isu pengiraan logik transaksi kewangan yang berdampak langsung pada pengguna.
+                </p>
+                <a href="https://drive.google.com/file/d/1cwtwFwDH_6niqtU3CoxdZu8G0rTN8NC4/view?usp=sharing" target="_blank" class="inline-block bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">
+                    📊 Buka QA Test Execution & Defect Log
+                </a>
+            </div>
+        </section>
 
-    <section id="certs">
-        <h2>Sijil Profesional & Kepakaran AI</h2>
-        <ul class="cert-list">
-            <li class="cert-item">
-                <strong>Google AI Professional Certificate</strong> (Google, 2026) <br>
-                <small>Penggunaan kecerdasan buatan untuk automasi analisis data, penjanaan senario ujian, dan dokumentasi teknikal.</small>
-            </li>
-            <li class="cert-item">
-                <strong>Introduction to Software Testing</strong> (Simplilearn, 2026)[cite: 4] <br>
-                <small>Asas kitaran hayat pengujian perisian (STLC) dan reka bentuk kes ujian menggunakan teknik Black Box.[cite: 4]</small>
-            </li>
-            <li class="cert-item">
-                <strong>Introduction to Data Science</strong> (Cisco Networking Academy, 2026)[cite: 4] <br>
-                <small>Kompetensi dalam analisis data dan pengekstrakan metrik kualiti perisian.[cite: 4]</small>
-            </li>
-        </ul>
-    </section>
+        <section id="skills-tab" class="tab-content space-y-6 hidden">
+            <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="h-5 w-1 bg-indigo-600 rounded-full"></span> Kemahiran Teknikal
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="font-bold text-sm text-slate-800 block mb-2">Dokumentasi QA</span>
+                        <p class="text-xs text-slate-500 leading-relaxed">Software Test Plan (STP), Test Cases Construction, Defect Logging & Reporting.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="font-bold text-sm text-slate-800 block mb-2">Alatan Pengujian</span>
+                        <p class="text-xs text-slate-500 leading-relaxed">Postman (API Testing), Selenium WebDriver, JUnit, Maven Ecosystem.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="font-bold text-sm text-slate-800 block mb-2">Asas & Bahasa</span>
+                        <p class="text-xs text-slate-500 leading-relaxed">Java (Basic Scripting), SQL (MySQL), PHP Web Core, HTML/CSS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="h-5 w-1 bg-indigo-600 rounded-full"></span> Sijil Profesional & Kepakaran AI
+                </h2>
+                <div class="space-y-3">
+                    <div class="p-4 border-l-4 border-emerald-500 bg-white shadow-sm border border-slate-200 rounded-r-lg">
+                        <span class="font-bold text-sm text-slate-900 block">Google AI Professional Certificate</span>
+                        <span class="text-xs text-slate-400 block mb-1">Google • Issued 2026</span>
+                        <p class="text-xs text-slate-600">Penggunaan kecerdasan buatan untuk automasi analisis data, penjanaan senario ujian, dan dokumentasi teknikal.</p>
+                    </div>
+                    <div class="p-4 border-l-4 border-emerald-500 bg-white shadow-sm border border-slate-200 rounded-r-lg">
+                        <span class="font-bold text-sm text-slate-900 block">Introduction to Software Testing</span>
+                        <span class="text-xs text-slate-400 block mb-1">Simplilearn • Issued 2026</span>
+                        <p class="text-xs text-slate-600">Asas kitaran hayat pengujian perisian (STLC) dan reka bentuk kes ujian menggunakan teknik Black Box.</p>
+                    </div>
+                    <div class="p-4 border-l-4 border-emerald-500 bg-white shadow-sm border border-slate-200 rounded-r-lg">
+                        <span class="font-bold text-sm text-slate-900 block">Introduction to Data Science</span>
+                        <span class="text-xs text-slate-400 block mb-1">Cisco Networking Academy • Issued 2026</span>
+                        <p class="text-xs text-slate-600">Kompetensi dalam analisis data dan pengekstrakan metrik kualiti perisian sistem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-400">
+        <p>&copy; 2026 Nurin Syazwani. Built with Tailwind CSS via GitHub Pages.</p>
+    </footer>
 
 </body>
 </html>
