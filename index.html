@@ -3,199 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nurin Syazwani | QA Engineer Portfolio</title>
-    <!-- Tailwind CSS & Font Inter -->
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    
+    <!--==================== TAILWIND CSS (Premium Styling) ====================-->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
-        function activeSection(sectionId, btnId) {
-            document.querySelectorAll('.portfolio-section').forEach(el => el.classList.add('hidden'));
-            document.getElementById(sectionId).classList.remove('hidden');
-            
-            document.querySelectorAll('.nav-btn').forEach(el => {
-                el.classList.remove('bg-indigo-600', 'text-white', 'shadow-md shadow-indigo-200');
-                el.classList.add('text-slate-600', 'hover:bg-slate-100');
-            });
-            const activeBtn = document.getElementById(btnId);
-            activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-100');
-            activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md shadow-indigo-200');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: { fontColor: '#6D6A7C', firstColor: '#4F46E5', titleColor: '#1E1B4B' }
+                }
+            }
         }
     </script>
+    
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <title>Nurin Syazwani | QA Engineer Portfolio</title>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between antialiased">
+<body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-indigo-500 selection:text-white">
 
-    <!-- Top Glow Effect -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[350px] bg-gradient-to-b from-indigo-100/40 to-transparent blur-3xl pointer-events-none"></div>
-
-    <!-- Navigation Bar (Glassmorphism) -->
-    <header class="sticky top-4 z-50 max-w-4xl w-[92%] mx-auto mt-4 bg-white/80 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-sm px-4 py-3 flex items-center justify-between">
-        <a href="#" class="text-base font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent tracking-tight">NS.QA</a>
-        <nav class="flex gap-1 md:gap-2">
-            <button id="btn-home" onclick="activeSection('sec-home', 'btn-home')" class="nav-btn px-2.5 py-1.5 rounded-xl text-xs md:text-sm font-semibold transition-all bg-indigo-600 text-white shadow-md shadow-indigo-200">👤 Profil</button>
-            <button id="btn-experience" onclick="activeSection('sec-experience', 'btn-experience')" class="nav-btn px-2.5 py-1.5 rounded-xl text-xs md:text-sm font-semibold transition-all text-slate-600 hover:bg-slate-100">💼 Pengalaman</button>
-            <button id="btn-artifacts" onclick="activeSection('sec-artifacts', 'btn-artifacts')" class="nav-btn px-2.5 py-1.5 rounded-xl text-xs md:text-sm font-semibold transition-all text-slate-600 hover:bg-slate-100">📊 Projek</button>
-            <button id="btn-skills" onclick="activeSection('sec-skills', 'btn-skills')" class="nav-btn px-2.5 py-1.5 rounded-xl text-xs md:text-sm font-semibold transition-all text-slate-600 hover:bg-slate-100">🛠️ Kompetensi</button>
-        </nav>
+    <!--==================== HEADER ====================-->
+    <header class="header fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 md:top-0 md:bottom-auto md:border-t-0 md:border-b md:bg-white/90 md:backdrop-blur-md z-50 transition-all" id="header">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#home" class="font-bold text-titleColor hover:text-firstColor transition">Nurin.QA</a>
+            
+            <div class="md:flex items-center gap-6 hidden">
+                <a href="#home" class="text-sm font-medium hover:text-firstColor transition">Home</a>
+                <a href="#about" class="text-sm font-medium hover:text-firstColor transition">About</a>
+                <a href="#skills" class="text-sm font-medium hover:text-firstColor transition">Skills</a>
+                <a href="#qualification" class="text-sm font-medium hover:text-firstColor transition">Qualifications</a>
+                <a href="#services" class="text-sm font-medium hover:text-firstColor transition">Services</a>
+                <a href="#portfolio" class="text-sm font-medium hover:text-firstColor transition">Portfolio</a>
+                <a href="#contact" class="text-sm font-medium hover:text-firstColor transition">Contact</a>
+            </div>
+            <!-- Mobile Navigation Icons View -->
+            <div class="flex justify-around w-full md:hidden text-xl text-slate-500">
+                <a href="#home" class="hover:text-firstColor"><i class="uil uil-estate"></i></a>
+                <a href="#about" class="hover:text-firstColor"><i class="uil uil-user"></i></a>
+                <a href="#skills" class="hover:text-firstColor"><i class="uil uil-file-alt"></i></a>
+                <a href="#portfolio" class="hover:text-firstColor"><i class="uil uil-scenery"></i></a>
+                <a href="#contact" class="hover:text-firstColor"><i class="uil uil-message"></i></a>
+            </div>
+        </div>
     </header>
 
-    <!-- Main Dashboard Container -->
-    <main class="max-w-4xl w-full mx-auto px-4 py-12 flex-grow relative z-10">
+    <!--==================== MAIN ====================-->
+    <main class="main max-w-4xl mx-auto px-4 pt-10 pb-24 md:pt-28 md:pb-12 space-y-24">
         
-        <!-- SECTION 1: HOME / PROFILE -->
-        <section id="sec-home" class="portfolio-section space-y-8 animate-[fadeIn_0.4s_ease-out]">
-            <div class="bg-white border border-slate-200/60 p-6 md:p-10 rounded-3xl shadow-sm flex flex-col md:flex-row gap-6 items-start justify-between relative overflow-hidden">
-                <div class="space-y-4 max-w-2xl">
-                    <div class="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Sedia Berkhidmat (Putrajaya)
-                    </div>
-                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                        Nurin Syazwani <span class="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Faizal Azmir</span>
-                    </h1>
-                    <p class="text-slate-600 text-sm md:text-base leading-relaxed">
-                        Graduan Sarjana Muda Sains Komputer (Kejuruteraan Perisian) dengan pengkhususan dan pengalaman praktikal dalam reka bentuk dokumentasi QA, automasi ujian UI (Selenium Java), serta pengujian manual aplikasi web. Mahir menukarkan keperluan bisnes kepada pelan ujian (Test Plans) yang komprehensif.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 text-xs font-medium text-slate-500 border-t border-slate-100">
-                        <span>📍 Presint 11, Putrajaya, Malaysia</span>
-                        <span>📞 +6018-4650723</span>
-                        <a href="mailto:nurin0508@gmail.com" class="hover:text-indigo-600 transition">✉️ nurin0508@gmail.com</a>
-                        <a href="https://www.linkedin.com/in/nurinsyazwani" target="_blank" class="text-indigo-600 hover:underline">🔗 linkedin.com/in/nurinsyazwani</a>
+        <!--==================== HOME ====================-->
+        <section class="home section pt-10" id="home">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4 order-2 md:order-1">
+                    <h1 class="text-3xl md:text-5xl font-bold text-titleColor leading-tight">Hi, I'm Nurin Syazwani</h1>
+                    <h3 class="text-lg md:text-xl font-medium text-firstColor">Junior Software Tester / QA Engineer</h3>
+                    <p class="text-slate-500 text-sm md:text-base leading-relaxed">Graduan Sains Komputer (Kejuruteraan Perisian) yang dipacu oleh data untuk memastikan kualiti sistem terbaik melalui pengujian manual dan automasi berasaskan standard industri.</p>
+                    <div class="pt-4 flex gap-3">
+                        <a href="#contact" class="bg-firstColor hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-lg shadow-indigo-100 transition flex items-center gap-2">
+                            Contact Me <i class="uil uil-message text-base"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- QA Performance Metrics -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-white border border-slate-200/60 p-5 rounded-2xl shadow-sm text-center">
-                    <span class="block text-2xl font-bold text-indigo-600">3.49</span>
-                    <span class="text-[10px] font-medium text-slate-400 uppercase tracking-wider mt-1 block">CGPA Teras UMT</span>
-                </div>
-                <div class="bg-white border border-slate-200/60 p-5 rounded-2xl shadow-sm text-center">
-                    <span class="block text-2xl font-bold text-violet-600">3x</span>
-                    <span class="text-[10px] font-medium text-slate-400 uppercase tracking-wider mt-1 block">Anugerah Dekan</span>
-                </div>
-                <div class="bg-white border border-slate-200/60 p-5 rounded-2xl shadow-sm text-center">
-                    <span class="block text-2xl font-bold text-emerald-600">15+</span>
-                    <span class="text-[10px] font-medium text-slate-400 uppercase tracking-wider mt-1 block">Modul API Diuji</span>
-                </div>
-                <div class="bg-white border border-slate-200/60 p-5 rounded-2xl shadow-sm text-center">
-                    <span class="block text-2xl font-bold text-rose-600">25</span>
-                    <span class="text-[10px] font-medium text-slate-400 uppercase tracking-wider mt-1 block">Defect Logs</span>
+                <!-- Gantikan 'profile.jpg' dengan nama fail gambar anda -->
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="w-48 h-48 md:w-64 md:h-64 bg-indigo-100 border-4 border-white shadow-xl rounded-full overflow-hidden flex items-center justify-center">
+                        <img src="profile.jpg" alt="Nurin Syazwani" class="w-full h-full object-cover onerror='this.style.display=\"none\"'">
+                        <!-- Placeholder jika gambar belum dimasukkan -->
+                        <i class="uil uil-user text-6xl text-indigo-300 absolute"></i>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: EXPERIENCE -->
-        <section id="sec-experience" class="portfolio-section space-y-6 hidden animate-[fadeIn_0.4s_ease-out]">
-            <div class="border-b border-slate-200 pb-2">
-                <h2 class="text-xl font-bold text-slate-900">Pengalaman Industri</h2>
+        <!--==================== ABOUT ====================-->
+        <section class="about section scroll-mt-20" id="about">
+            <div class="text-center space-y-2 mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-titleColor">About Me</h2>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">Introduction</p>
             </div>
-
-            <!-- Kerja 1 -->
-            <div class="bg-white border border-slate-200/60 p-6 rounded-2xl shadow-sm relative">
-                <span class="absolute top-6 right-6 text-xs font-semibold text-slate-400">Apr 2026 - Kini</span>
-                <h3 class="text-base font-bold text-slate-900">Software Engineer (Project Trainee - K-Youth)</h3>
-                <p class="text-xs text-indigo-600 font-semibold">MInD Mechatronic Intelligent Design Sdn. Bhd., Cyberjaya</p>
-                <ul class="text-xs text-slate-600 mt-3 list-disc pl-4 space-y-1">
-                    <li>Mengumpul keperluan bagi <em>KPI Project Performance Management System</em> dan menterjemah keperluan pihak berkepentingan kepada spesifikasi teknikal.</li>
-                    <li>Menyokong pemetaan aliran kerja sistem dan dokumentasi dalam persekitaran pembangunan Agile.</li>
-                    <li>Mereka bentuk *wireframe* sistem menggunakan Figma untuk meningkatkan kefahaman UI sebelum fasa pembangunan.</li>
-                </ul>
-            </div>
-
-            <!-- Kerja 2 -->
-            <div class="bg-white border border-slate-200/60 p-6 rounded-2xl shadow-sm relative">
-                <span class="absolute top-6 right-6 text-xs font-semibold text-slate-400">Ogos 2025 - Jan 2026</span>
-                <h3 class="text-base font-bold text-slate-900">Intern - QA & Software Engineer</h3>
-                <p class="text-xs text-indigo-600 font-semibold">ME-Tech Solution Sdn Bhd, Cyberjaya</p>
-                <ul class="text-xs text-slate-600 mt-3 list-disc pl-4 space-y-1">
-                    <li>Melaksanakan pengujian API menggunakan Postman untuk mengesahkan *backend endpoints* dan mengurus ketepatan data merentasi 15+ modul sistem.</li>
-                    <li>Menjalankan ujian manual dan automasi (Selenium) untuk aplikasi web serta menyediakan laporan terperinci mengenai prestasi sistem.</li>
-                    <li>Menyokong pembangunan aplikasi <em>SihatAI</em> dengan membina modul mudah alih menggunakan Flutter dan membangunkan PHP backend.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- SECTION 3: PROJECTS & ARTIFACTS -->
-        <section id="sec-artifacts" class="portfolio-section space-y-6 hidden animate-[fadeIn_0.4s_ease-out]">
-            <div class="border-b border-slate-200 pb-2">
-                <h2 class="text-xl font-bold text-slate-900">Reputasi Projek & Artifak QA</h2>
-            </div>
-
-            <!-- Bayou -->
-            <div class="bg-white border border-slate-200/60 p-6 rounded-2xl shadow-sm group">
-                <div class="flex gap-2 mb-2"><span class="bg-indigo-50 border text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Selenium Automation</span></div>
-                <h3 class="text-base font-bold text-slate-900">Automated Testing - Bayou Learning Platform</h3>
-                <p class="text-xs text-slate-600 mt-1 mb-4">Membangunkan skrip ujian automasi UI menggunakan Selenium Java untuk mengesahkan aliran log masuk, kemas kini profil, dan pengesahan input negatif.</p>
-                <div class="flex gap-2">
-                    <a href="https://drive.google.com/file/d/1Q90UKoxbFeY_g5DYOMvhxrcssj4D2wXS/view?usp=sharing" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-white text-[11px] font-bold px-3 py-2 rounded-lg transition">📄 Pelan Ujian</a>
-                    <a href="https://github.com/nurynsyaz/Selenium-Automation-Bayou-Elearning" target="_blank" class="border border-slate-200 hover:bg-slate-50 text-slate-700 text-[11px] font-bold px-3 py-2 rounded-lg transition">📁 Repositori Kod</a>
+            
+            <div class="bg-white border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-sm space-y-6">
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed">
+                    Saya memegang ijazah Sarjana Muda Sains Komputer (Kejuruteraan Perisian) dengan pengkhususan reka bentuk dokumentasi QA, automasi ujian UI (Selenium Java), serta pengujian manual aplikasi web. Berpengalaman dalam persekitaran pembangunan Agile bagi mengenalpasti pepijat sistem, mengesahkan respons API, serta memastikan kualiti produk akhir.
+                </p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center border-t border-b border-slate-100 py-4">
+                    <div>
+                        <span class="block text-xl font-bold text-firstColor">3.49</span>
+                        <span class="text-xs text-slate-400">CGPA Keseluruhan UMT</span>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-bold text-firstColor">3x</span>
+                        <span class="text-xs text-slate-400">Anugerah Dekan</span>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <span class="block text-xl font-bold text-firstColor">15+</span>
+                        <span class="text-xs text-slate-400">Modul API Diuji</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- AcademyBugs -->
-            <div class="bg-white border border-slate-200/60 p-6 rounded-2xl shadow-sm">
-                <div class="flex gap-2 mb-2"><span class="bg-rose-50 border text-rose-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Manual Audit</span></div>
-                <h3 class="text-base font-bold text-slate-900">Defect Execution - AcademyBugs E-Commerce</h3>
-                <p class="text-xs text-slate-600 mt-1 mb-4">Menjalankan pengujian fungsional black-box menyeluruh dan berjaya mendokumentasikan log pepijat ralat transaksi kewangan ($100 overcharge).</p>
-                <a href="https://drive.google.com/file/d/1cwtwFwDH_6niqtU3CoxdZu8G0rTN8NC4/view?usp=sharing" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-white text-[11px] font-bold px-3 py-2 rounded-lg transition">📊 Buka Laporan Defekt</a>
-            </div>
-
-            <!-- PPMS -->
-            <div class="bg-white border border-slate-200/60 p-6 rounded-2xl shadow-sm">
-                <div class="flex gap-2 mb-2"><span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Web Development</span></div>
-                <h3 class="text-base font-bold text-slate-900">Project Performance Management System (PPMS)</h3>
-                <p class="text-xs text-slate-600 mt-1">Membangunkan sistem berasaskan web untuk menjejaki kemajuan projek serta melakukan pengujian fungsional kemasukan data borang secara intensif.</p>
-            </div>
-
-            <!-- IoT -->
-            <div class="bg-white border border-slate-200/60 p-6 rounded-2xl shadow-sm">
-                <div class="flex gap-2 mb-2"><span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-md">Data Verification</span></div>
-                <h3 class="text-base font-bold text-slate-900">IoT Air Pollution Monitoring System</h3>
-                <p class="text-xs text-slate-600 mt-1">Membantu dalam pengesahan integriti data penderia (sensor) IoT untuk memastikan laporan alam sekitar masa nyata adalah tepat dan konsisten.</p>
-            </div>
-        </section>
-
-        <!-- SECTION 4: SKILLS & EDUCATION -->
-        <section id="sec-skills" class="portfolio-section space-y-6 hidden animate-[fadeIn_0.4s_ease-out]">
-            <div class="border-b border-slate-200 pb-2">
-                <h2 class="text-xl font-bold text-slate-900">Pendidikan & Kompetensi</h2>
-            </div>
-
-            <!-- Pendidikan Card -->
-            <div class="bg-white border border-slate-200/60 p-5 rounded-2xl shadow-sm space-y-3">
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Kelayakan Akademik</h3>
-                <div>
-                    <span class="font-bold text-slate-900 text-sm block">Sarjana Muda Sains Komputer (Kejuruteraan Perisian)</span>
-                    <span class="text-xs text-slate-500 block">Universiti Malaysia Terengganu • CGPA 3.49 (Jangkaan Graduasi: Okt 2026)</span>
-                </div>
-                <div class="border-t border-slate-100 pt-2">
-                    <span class="font-bold text-slate-900 text-sm block">Asasi Sains, Teknologi, Kejuruteraan & Matematik (STEM)</span>
-                    <span class="text-xs text-slate-500 block">Universiti Malaysia Terengganu • CGPA 3.72/4.00 | MUET Band 4</span>
-                </div>
-            </div>
-
-            <!-- Skills List Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="bg-white border border-slate-200/60 p-4 rounded-xl">
-                    <span class="font-bold text-xs text-indigo-600 block mb-2">Testing & QA</span>
-                    <p class="text-xs text-slate-600 leading-relaxed">Manual & Automated Testing, Postman (API), Selenium WebDriver, JUnit, Test Case Design, Bug Reporting, Regression Testing.</p>
-                </div>
-                <div class="bg-white border border-slate-200/60 p-4 rounded-xl">
-                    <span class="font-bold text-xs text-indigo-600 block mb-2">Development & Architecture</span>
-                    <p class="text-xs text-slate-600 leading-relaxed">Flutter (Mobile), PHP (Backend Scripting), Java (Basic Core), SQL (MySQL Data Base), Web Architecture.</p>
+                <div class="text-center pt-2">
+                    <!-- Anda boleh memautkan resume PDF asal di sini -->
+                    <a href="https://drive.google.com/file/d/1Q90UKoxbFeY_g5DYOMvhxrcssj4D2wXS/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-3 rounded-xl transition">
+                        Download Resume Full <i class="uil uil-download-alt text-sm"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!--==================== SKILLS ====================-->
+        <section class="skills section scroll-mt-20" id="skills">
+            <div class="text-center space-y-2 mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-titleColor">Skills</h2>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">Technical Expertise</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- QA Skills Box -->
+                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2 text-sm md:text-base">
+                        <i class="uil uil-bug text-firstColor text-lg"></i> Testing & Quality Assurance
+                    </h3>
+                    <div class="space-y-2 text-xs md:text-sm text-slate-600">
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Manual & Automated Testing</span><span class="font-semibold text-firstColor">Advanced</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>API Testing using Postman</span><span class="font-semibold text-firstColor">Advanced</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>UI Automation (Selenium Java, JUnit)</span><span class="font-semibold text-firstColor">Intermediate</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Test Case Design & Bug Reporting</span><span class="font-semibold text-firstColor">Advanced</span></div>
+                        <div class="flex justify-between py-1.5"><span>Regression & Functional Testing</span><span class="font-semibold text-firstColor">Advanced</span></div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills Box -->
+                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2 text-sm md:text-base">
+                        <i class="uil uil-brackets-curly text-firstColor text-lg"></i> Development & Tools
+                    </h3>
+                    <div class="space-y-2 text-xs md:text-sm text-slate-600">
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Postman, Selenium, Maven</span><span class="font-semibold text-indigo-500">Tools</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Flutter Framework (Mobile)</span><span class="font-semibold text-indigo-500">Framework</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>PHP (Backend API) & MySQL</span><span class="font-semibold text-indigo-500">Database</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Java Core (Basic Scripting)</span><span class="font-semibold text-indigo-500">Language</span></div>
+                        <div class="flex justify-between py-1.5"><span>Web & RESTful API Architecture</span><span class="font-semibold text-indigo-500">Architecture</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== QUALIFICATION ====================-->
+        <section class="qualification section scroll-mt-20" id="qualification">
+            <div class="text-center space-y-2 mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-titleColor">Qualification</h2>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">My Personal Journey</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Education Timeline -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-slate-900 text-sm md:text-base flex items-center gap-2 mb-4">
+                        <i class="uil uil-graduation-cap text-firstColor"></i> Education
+                    </h3>
+                    <div class="border-l-2 border-slate-200 pl-4 space-y-6 text-xs md:text-sm">
+                        <div class="relative">
+                            <span class="absolute w-3 h-3 bg-firstColor rounded-full -left-[21px] top-1"></span>
+                            <span class="text-slate-400 font-medium block">Expected Oct 2026</span>
+                            <span class="font-bold text-slate-900 block">Ijazah Sarjana Muda Sains Komputer (Kejuruteraan Perisian)</span>
+                            <span class="text-slate-500">Universiti Malaysia Terengganu (CGPA: 3.49)</span>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[21px] top-1"></span>
+                            <span class="text-slate-400 font-medium block">2021 - 2022</span>
+                            <span class="font-bold text-slate-900 block">Foundation in STEM</span>
+                            <span class="text-slate-500">Universiti Malaysia Terengganu (CGPA: 3.72 | MUET Band 4)</span>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[21px] top-1"></span>
+                            <span class="text-slate-400 font-medium block">2019 - 2020</span>
+                            <span class="font-bold text-slate-900 block">SPM (Science Stream) & IGCSE</span>
+                            <span class="text-slate-500">MRSM Kuala Klawang (SPM: 5A 4B | IGCSE: 2B 4C)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Timeline -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-slate-900 text-sm md:text-base flex items-center gap-2 mb-4">
+                        <i class="uil uil-briefcase-alt text-firstColor"></i> Experience
+                    </h3>
+                    <div class="border-l-2 border-slate-200 pl-4 space-y-6 text-xs md:text-sm">
+                        <div class="relative">
+                            <span class="absolute w-3 h-3 bg-firstColor rounded-full -left-[21px] top-1"></span>
+                            <span class="text-slate-400 font-medium block">Apr 2026 - Present</span>
+                            <span class="font-bold text-slate-900 block">Software Engineer (Project Trainee - K-Youth)</span>
+                            <span class="text-slate-500">MInD Mechatronic Intelligent Design Sdn. Bhd., Cyberjaya</span>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[21px] top-1"></span>
+                            <span class="text-slate-400 font-medium block">Aug 2025 - Jan 2026</span>
+                            <span class="font-bold text-slate-900 block">Intern - QA & Software Engineer</span>
+                            <span class="text-slate-500">ME-Tech Solution Sdn Bhd, Cyberjaya</span>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[21px] top-1"></span>
+                            <span class="text-slate-400 font-medium block">2021 - 2023</span>
+                            <span class="font-bold text-slate-900 block">Sales & Customer Service Assistant</span>
+                            <span class="text-slate-500">Various (7-Eleven, Jimart, CrimeBites, AINAA Beauty)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== SERVICES ====================-->
+        <section class="services section scroll-mt-20" id="services">
+            <div class="text-center space-y-2 mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-titleColor">Services</h2>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">What I Offer</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs md:text-sm">
+                <div class="p-5 bg-white border border-slate-200/80 rounded-2xl shadow-sm text-center space-y-2">
+                    <i class="uil uil-search-alt text-2xl text-firstColor block"></i>
+                    <span class="font-bold text-slate-900 block">Manual Testing</span>
+                    <p class="text-slate-400 text-xs">Reka bentuk pelan kes ujian (Positive/Negative) serta penjejakan pepijat kritikal.</p>
+                </div>
+                <div class="p-5 bg-white border border-slate-200/80 rounded-2xl shadow-sm text-center space-y-2">
+                    <i class="uil uil-setting text-2xl text-firstColor block"></i>
+                    <span class="font-bold text-slate-900 block">UI Test Automation</span>
+                    <p class="text-slate-400 text-xs">Membangun skrip ujian automasi menggunakan kerangka Selenium Java dan JUnit.</p>
+                </div>
+                <div class="p-5 bg-white border border-slate-200/80 rounded-2xl shadow-sm text-center space-y-2 sm:col-span-2 md:col-span-1">
+                    <i class="uil uil-exchange text-2xl text-firstColor block"></i>
+                    <span class="font-bold text-slate-900 block">API Verification</span>
+                    <p class="text-slate-400 text-xs">Ujian pengesahan endpoint backend menggunakan Postman untuk integriti data.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PORTFOLIO ====================-->
+        <section class="portfolio section scroll-mt-20" id="portfolio">
+            <div class="text-center space-y-2 mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-titleColor">Portfolio</h2>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">Most Recent Work</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Project 1 -->
+                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <div class="bg-slate-100 rounded-xl h-32 flex items-center justify-center border border-slate-200 text-slate-300 relative overflow-hidden">
+                        <img src="project1.jpg" alt="Bayou Project" class="w-full h-full object-cover onerror='this.style.display=\"none\"'">
+                        <i class="uil uil-image-v text-3xl absolute"></i>
+                    </div>
+                    <div class="md:col-span-2 space-y-2 text-xs md:text-sm">
+                        <span class="bg-indigo-50 text-firstColor font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Selenium Automation</span>
+                        <h3 class="font-bold text-slate-900 text-base">Automated Testing - Bayou Learning Platform</h3>
+                        <p class="text-slate-500">Membangun skrip automasi untuk mengesahkan aliran login, profil, dan validasi input e-mel.</p>
+                        <div class="flex gap-2 pt-1">
+                            <a href="https://drive.google.com/file/d/1Q90UKoxbFeY_g5DYOMvhxrcssj4D2wXS/view?usp=sharing" target="_blank" class="bg-slate-900 text-white font-semibold px-3 py-1.5 rounded-lg text-xs">📄 Test Plan</a>
+                            <a href="https://github.com/nurynsyaz/Selenium-Automation-Bayou-Elearning" target="_blank" class="border border-slate-200 text-slate-700 font-semibold px-3 py-1.5 rounded-lg text-xs hover:bg-slate-50">📁 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <div class="bg-slate-100 rounded-xl h-32 flex items-center justify-center border border-slate-200 text-slate-300 relative overflow-hidden">
+                        <img src="project2.jpg" alt="AcademyBugs Project" class="w-full h-full object-cover onerror='this.style.display=\"none\"'">
+                        <i class="uil uil-image-v text-3xl absolute"></i>
+                    </div>
+                    <div class="md:col-span-2 space-y-2 text-xs md:text-sm">
+                        <span class="bg-rose-50 text-rose-600 font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Manual Testing</span>
+                        <h3 class="font-bold text-slate-900 text-base">Defect Audit - AcademyBugs E-Commerce</h3>
+                        <p class="text-slate-500">Mengesan dan mendokumentasikan ralat logik transaksi kewangan sistem dengan 25 laporan kes pepijat.</p>
+                        <div class="pt-1">
+                            <a href="https://drive.google.com/file/d/1cwtwFwDH_6niqtU3CoxdZu8G0rTN8NC4/view?usp=sharing" target="_blank" class="bg-slate-900 text-white font-semibold px-3 py-1.5 rounded-lg text-xs inline-block">📊 View Defect Log</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <div class="bg-slate-100 rounded-xl h-32 flex items-center justify-center border border-slate-200 text-slate-300 relative overflow-hidden">
+                        <img src="project3.jpg" alt="PPMS Project" class="w-full h-full object-cover onerror='this.style.display=\"none\"'">
+                        <i class="uil uil-image-v text-3xl absolute"></i>
+                    </div>
+                    <div class="md:col-span-2 space-y-2 text-xs md:text-sm">
+                        <span class="bg-slate-100 text-slate-700 font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Full Development</span>
+                        <h3 class="font-bold text-slate-900 text-base">Project Performance Management System (PPMS)</h3>
+                        <p class="text-slate-500">Membangunkan sistem web penjejakan prestasi KPI, menjalankan ujian input form serta pengesahan validasi data.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <div class="bg-slate-100 rounded-xl h-32 flex items-center justify-center border border-slate-200 text-slate-300 relative overflow-hidden">
+                        <img src="project4.jpg" alt="IoT Project" class="w-full h-full object-cover onerror='this.style.display=\"none\"'">
+                        <i class="uil uil-image-v text-3xl absolute"></i>
+                    </div>
+                    <div class="md:col-span-2 space-y-2 text-xs md:text-sm">
+                        <span class="bg-slate-100 text-slate-700 font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">IoT Validation</span>
+                        <h3 class="font-bold text-slate-900 text-base">IoT Air Pollution Monitoring System</h3>
+                        <p class="text-slate-500">Membantu proses pembangunan sistem dan menjalankan semakan kesahihan integriti data penderia (sensor) alam sekitar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PROJECT IN MIND ====================-->
+        <section class="project section rounded-2xl bg-indigo-600 text-white p-6 md:p-8 text-center space-y-4">
+            <h3 class="text-xl font-bold">Have a project in mind?</h3>
+            <p class="text-xs md:text-sm text-indigo-100 max-w-md mx-auto">Saya sedia menyumbang kemahiran dalam automasi ujian, kawalan kualiti, dan analisis kestabilan ekosistem perisian syarikat anda.</p>
+            <a href="#contact" class="inline-block bg-white text-firstColor font-bold text-xs px-4 py-2.5 rounded-xl shadow transition hover:bg-indigo-50">Hubungi Saya</a>
+        </section>
+
+        <!--==================== TESTIMONIAL ====================-->
+        <section class="testimonial section scroll-mt-20">
+            <div class="text-center space-y-2 mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-titleColor">Testimonial</h2>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">Endorsements</p>
+            </div>
+            <div class="bg-white border border-slate-200/80 p-6 rounded-2xl text-center shadow-sm max-w-md mx-auto space-y-3">
+                <i class="uil uil-feedback text-2xl text-firstColor"></i>
+                <p class="text-xs md:text-sm italic text-slate-500">"Komited dalam menyediakan dokumentasi pelan pengujian dan mampu berkolaborasi dengan baik bersama pasukan pembangun dalam ekosistem kerja Agile."</p>
+                <span class="font-bold text-slate-900 text-xs block">- Industri / Academic Supervisor (Penyelia)</span>
+            </div>
+        </section>
+
+        <!--==================== CONTACT ME ====================-->
+        <section class="contact section scroll-mt-20" id="contact">
+            <div class="text-center space-y-2 mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-titleColor">Contact Me</h2>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">Get In Touch</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs md:text-sm">
+                <!-- Hubungi Maklumat -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 p-4 bg-white border border-slate-200/80 rounded-xl">
+                        <i class="uil uil-phone text-xl text-firstColor"></i>
+                        <div>
+                            <span class="font-bold text-slate-900 block">Call Me</span>
+                            <span class="text-slate-500">+6018-4650723</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-white border border-slate-200/80 rounded-xl">
+                        <i class="uil uil-envelope text-xl text-firstColor"></i>
+                        <div>
+                            <span class="font-bold text-slate-900 block">Email</span>
+                            <span class="text-slate-500">nurin0508@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-white border border-slate-200/80 rounded-xl">
+                        <i class="uil uil-map-marker text-xl text-firstColor"></i>
+                        <div>
+                            <span class="font-bold text-slate-900 block">Location</span>
+                            <span class="text-slate-500">Presint 11, Putrajaya, Malaysia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Borang Hubungi (UI Template) -->
+                <form class="space-y-3 bg-white border border-slate-200/80 p-5 rounded-xl shadow-sm" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Name" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-firstColor transition text-xs">
+                    <input type="email" placeholder="Email" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-firstColor transition text-xs">
+                    <textarea placeholder="Message" rows="3" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-firstColor transition text-xs"></img-placeholder></textarea>
+                    <button class="w-full bg-firstColor text-white font-bold p-3 rounded-lg hover:bg-indigo-700 transition text-xs">Send Message</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full bg-white border-t border-slate-200 py-4 text-center text-[10px] text-slate-400">
-        <p>&copy; 2026 Nurin Syazwani. Dijana Menggunakan Premium Tailwind CSS.</p>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer bg-slate-900 text-slate-400 py-8 text-center text-xs mt-12">
+        <div class="max-w-4xl mx-auto px-4 space-y-2">
+            <span class="font-bold text-white tracking-tight">Nurin Syazwani Portfolio</span>
+            <p class="text-slate-500 text-[11px]">&copy; 2026. Built according to responsive developer templates with Tailwind CSS.</p>
+        </div>
     </footer>
+    
+    <!--==================== SWIPER JS ====================-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!--==================== MAIN JS ====================-->
+    <script>
+        // Smooth internal page linking active state adjustments if needed.
+    </script>
 </body>
 </html>
