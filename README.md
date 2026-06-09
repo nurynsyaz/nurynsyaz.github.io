@@ -1,0 +1,1 @@
+# nurynsyaz.github.io
