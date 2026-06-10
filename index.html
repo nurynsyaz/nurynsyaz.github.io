@@ -82,29 +82,51 @@
         </section>
 
         <!--==================== ABOUT ====================-->
+       <!--==================== ABOUT ====================-->
         <section class="about section scroll-mt-20" id="about">
             <div class="text-center space-y-2 mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-titleColor">About Me</h2>
                 <p class="text-xs text-slate-400 uppercase tracking-widest">Introduction</p>
             </div>
             
-            <div class="bg-white border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-sm space-y-6">
-                <p class="text-sm md:text-base text-slate-600 leading-relaxed">
+            <div class="bg-white border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-sm space-y-6 max-w-4xl mx-auto">
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed text-center md:text-left">
                     I hold a Bachelor of Computer Science (Software Engineering) specializing in test architecture design, UI automation testing (Selenium Java), and robust API verification. Leveraging a full-stack engineering background from my internships, I bring an "under-the-hood" code perspective to QA—allowing me to pinpoint root-cause architectural bugs in Agile environments before they hit production.
                 </p>
                 
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center border-t border-b border-slate-100 py-4">
-                    <div>
-                        <span class="block text-xl font-bold text-firstColor">3.49</span>
-                        <span class="text-xs text-slate-400">UMT Overall CGPA</span>
+                <!-- Re-engineered Balanced Two-Column Metric Grid -->
+                <div class="grid grid-cols-2 gap-4 text-center border-t border-b border-slate-100 py-4 max-w-md mx-auto">
+                    <!-- Column 1: Academic Metric -->
+                    <div class="border-r border-slate-100 last:border-0">
+                        <span class="block text-xl md:text-2xl font-bold text-firstColor">3.49</span>
+                        <span class="text-xs text-slate-400 font-medium">UMT Overall CGPA</span>
                     </div>
+                    
+                    <!-- Column 2: Award Metric + Interactive Verification Link -->
                     <div>
-                        <span class="block text-xl font-bold text-firstColor">3x</span>
-                        <span class="text-xs text-slate-400">Dean's List Award</span>
+                        <!-- Pro-Tip: Rather than filling up space with images, we compress your proof into an interactive hover element -->
+                        <div class="group relative inline-block">
+                            <span class="block text-xl md:text-2xl font-bold text-firstColor cursor-help flex items-center justify-center gap-1">
+                                3x <i class="uil uil-info-circle text-xs text-slate-300 group-hover:text-firstColor transition"></i>
+                            </span>
+                            
+                            <!-- Dropdown Proof Container showing your asset dependencies on hover -->
+                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-slate-900 text-white text-[10px] rounded-lg p-2 shadow-xl z-30 w-44 pointer-events-auto">
+                                <p class="font-bold border-b border-slate-700 pb-1 mb-1 text-slate-300">Verified Dean's List:</p>
+                                <ul class="space-y-1 text-left">
+                                    <li><a href="assets/img/DeanListSemester3.jpg" target="_blank" class="hover:text-indigo-400 block py-0.5">📄 Semester 3 Certificate</a></li>
+                                    <li><a href="assets/img/DeanListSemester5.jpg" target="_blank" class="hover:text-indigo-400 block py-0.5">📄 Semester 5 Certificate</a></li>
+                                    <li><a href="assets/img/DeanListSemester6.jpg" target="_blank" class="hover:text-indigo-400 block py-0.5">📄 Semester 6 Certificate</a></li>
+                                </ul>
+                                <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-900"></div>
+                            </div>
+                        </div>
+                        <span class="text-xs text-slate-400 block font-medium">Dean's List Awards</span>
                     </div>
                 </div>
+
                 <div class="text-center pt-2">
-                    <a href="https://drive.google.com/file/d/1a88eri8BSTpFuVnvbCyiDlGnY3lys9nM/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-3 rounded-xl transition">
+                    <a href="https://drive.google.com/file/d/1a88eri8BSTpFuVnvbCyiDlGnY3lys9nM/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-3 rounded-xl transition shadow-sm">
                         Download Full Resume <i class="uil uil-download-alt text-sm"></i>
                     </a>
                 </div>
