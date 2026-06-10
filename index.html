@@ -9,7 +9,7 @@
     
     <!--==================== TAILWIND CSS (Premium Styling) ====================-->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -39,6 +39,7 @@
                 <a href="#about" class="text-sm font-medium hover:text-firstColor transition">About</a>
                 <a href="#skills" class="text-sm font-medium hover:text-firstColor transition">Skills</a>
                 <a href="#qualification" class="text-sm font-medium hover:text-firstColor transition">Qualifications</a>
+                <a href="#certifications" class="text-sm font-medium hover:text-firstColor transition">Certifications</a>
                 <a href="#services" class="text-sm font-medium hover:text-firstColor transition">Services</a>
                 <a href="#portfolio" class="text-sm font-medium hover:text-firstColor transition">Portfolio</a>
                 <a href="#contact" class="text-sm font-medium hover:text-firstColor transition">Contact</a>
@@ -48,6 +49,7 @@
                 <a href="#home" class="hover:text-firstColor"><i class="uil uil-estate"></i></a>
                 <a href="#about" class="hover:text-firstColor"><i class="uil uil-user"></i></a>
                 <a href="#skills" class="hover:text-firstColor"><i class="uil uil-file-alt"></i></a>
+                <a href="#certifications" class="hover:text-firstColor"><i class="uil uil-award"></i></a>
                 <a href="#portfolio" class="hover:text-firstColor"><i class="uil uil-scenery"></i></a>
                 <a href="#contact" class="hover:text-firstColor"><i class="uil uil-message"></i></a>
             </div>
@@ -62,8 +64,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-4 order-2 md:order-1">
                     <h1 class="text-3xl md:text-5xl font-bold text-titleColor leading-tight">Hi, I'm Nurin Syazwani</h1>
-                    <h3 class="text-lg md:text-xl font-medium text-firstColor">Junior Software Tester / QA Engineer</h3>
-                    <p class="text-slate-500 text-sm md:text-base leading-relaxed">Computer Science (Software Engineering) graduate driven by data to ensure optimal system quality through manual and automated testing based on industry standards.</p>
+                    <h3 class="text-lg md:text-xl font-medium text-firstColor">Junior QA Engineer / Software Tester</h3>
+                    <p class="text-slate-500 text-sm md:text-base leading-relaxed">Computer Science (Software Engineering) graduate with an engineering background. Specialized in maximizing software stability via robust manual validation, API contract testing, and Selenium automation frameworks.</p>
                     <div class="pt-4 flex gap-3">
                         <a href="#contact" class="bg-firstColor hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-lg shadow-indigo-100 transition flex items-center gap-2">
                             Contact Me <i class="uil uil-message text-base"></i>
@@ -72,8 +74,7 @@
                 </div>
                 <div class="order-1 md:order-2 flex justify-center">
                     <div class="w-48 h-48 md:w-64 md:h-64 bg-indigo-100 border-4 border-white shadow-xl rounded-full overflow-hidden flex items-center justify-center relative">
-                        <img src="profile.jpg" alt="Nurin Syazwani" class="w-full h-full object-cover" onerror="this.style.display='none'">
-                        <!-- Profile Image Placeholder -->
+                        <img src="assets/img/profile.jpg" alt="Nurin Syazwani" class="w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
                         <i class="uil uil-user text-6xl text-indigo-300 absolute"></i>
                     </div>
                 </div>
@@ -89,7 +90,7 @@
             
             <div class="bg-white border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-sm space-y-6">
                 <p class="text-sm md:text-base text-slate-600 leading-relaxed">
-                    I hold a Bachelor of Computer Science (Software Engineering) specializing in QA documentation design, UI automation testing (Selenium Java), and manual testing of web applications. I am experienced in Agile development environments, identifying system bugs, validating API responses, and ensuring the quality of the final product.
+                    I hold a Bachelor of Computer Science (Software Engineering) specializing in test architecture design, UI automation testing (Selenium Java), and robust API verification. Leveraging a full-stack engineering background from my internships, I bring an "under-the-hood" code perspective to QA—allowing me to pinpoint root-cause architectural bugs in Agile environments before they hit production.
                 </p>
                 
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center border-t border-b border-slate-100 py-4">
@@ -101,10 +102,10 @@
                         <span class="block text-xl font-bold text-firstColor">3x</span>
                         <span class="text-xs text-slate-400">Dean's List Award</span>
                     </div>
-                    <div>
-    <span class="block text-xl font-bold text-firstColor">15+</span>
-    <span class="text-xs text-slate-400">API Endpoints Validated</span>
-</div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <span class="block text-xl font-bold text-firstColor">15+</span>
+                        <span class="text-xs text-slate-400">API Endpoints Validated</span>
+                    </div>
                 </div>
                 <div class="text-center pt-2">
                     <a href="https://drive.google.com/file/d/1a88eri8BSTpFuVnvbCyiDlGnY3lys9nM/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-3 rounded-xl transition">
@@ -129,10 +130,10 @@
                     </h3>
                     <div class="space-y-2 text-xs md:text-sm text-slate-600">
                         <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Manual & Automated Testing</span><span class="font-semibold text-firstColor">Intermediate</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>API Testing using Postman</span><span class="font-semibold text-firstColor">Intermediate</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>UI Automation (Selenium Java, JUnit)</span><span class="font-semibold text-firstColor">Intermediate</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Test Case Design & Bug Reporting</span><span class="font-semibold text-firstColor">Intermediate</span></div>
-                        <div class="flex justify-between py-1.5"><span>Regression & Functional Testing</span><span class="font-semibold text-firstColor">Intermediate</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>API Functional Testing (Postman)</span><span class="font-semibold text-firstColor">Intermediate</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>UI Web Automation (Selenium Java)</span><span class="font-semibold text-firstColor">Intermediate</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Test Planning & Defect Tracking</span><span class="font-semibold text-firstColor">Intermediate</span></div>
+                        <div class="flex justify-between py-1.5"><span>Regression & Integration Testing</span><span class="font-semibold text-firstColor">Intermediate</span></div>
                     </div>
                 </div>
 
@@ -142,11 +143,11 @@
                         <i class="uil uil-brackets-curly text-firstColor text-lg"></i> Development & Tools
                     </h3>
                     <div class="space-y-2 text-xs md:text-sm text-slate-600">
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Postman, Selenium, Maven</span><span class="font-semibold text-indigo-500">QA Tools</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Microsoft Office (Word, Excel, PPT)</span><span class="font-semibold text-indigo-500">Documentation</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Flutter Framework & Figma</span><span class="font-semibold text-indigo-500">Frontend / UI</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>PHP API, Java Core & MySQL</span><span class="font-semibold text-indigo-500">Backend / DB</span></div>
-                        <div class="flex justify-between py-1.5"><span>Web & RESTful API Architecture</span><span class="font-semibold text-indigo-500">Architecture</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Postman, Selenium, Maven, JUnit</span><span class="font-semibold text-indigo-500">QA Ecosystem</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Figma, Git, Agile/Scrum Workflows</span><span class="font-semibold text-indigo-500">Collaboration</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Flutter Framework, Mobile UI Layouts</span><span class="font-semibold text-indigo-500">Frontend</span></div>
+                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>PHP, Laravel API, MySQL Architecture</span><span class="font-semibold text-indigo-500">Backend</span></div>
+                        <div class="flex justify-between py-1.5"><span>JSON Validation & Relational Schemas</span><span class="font-semibold text-indigo-500">Data Validation</span></div>
                     </div>
                 </div>
             </div>
@@ -182,12 +183,12 @@
                             <span class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[21px] top-1"></span>
                             <span class="text-slate-400 font-medium block">2019 - 2020</span>
                             <span class="font-bold text-slate-900 block">SPM (Science Stream) & IGCSE</span>
-                            <span class="text-slate-500">MRSM Kuala Klawang (SPM: 5A 4B | IGCSE: 2B 4C)</span>
+                            <span class="text-slate-500">MRSM Kuala Klawang (SPM: 5A 4B)</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Experience Timeline with Detailed Bullet Points -->
+                <!-- Experience Timeline -->
                 <div class="space-y-4">
                     <h3 class="font-bold text-slate-900 text-sm md:text-base flex items-center gap-2 mb-4">
                         <i class="uil uil-briefcase-alt text-firstColor"></i> Experience
@@ -200,35 +201,107 @@
                             <span class="font-bold text-slate-900 block">Software Engineer (Project Trainee - K-Youth)</span>
                             <span class="text-indigo-600 font-medium block mb-1">MInD Mechatronic Intelligent Design Sdn. Bhd., Cyberjaya</span>
                             <ul class="list-disc pl-4 space-y-1 text-slate-500 text-[11px] md:text-xs">
-                                <li>Gathered requirements for KPI Project Performance Management System and translated stakeholder needs into technical specifications.</li>
-                                <li>Supported system workflow mapping and documentation in an Agile development environment.</li>
-                                <li>Designed system wireframes using Figma to improve UI understanding before development.</li>
+                                <li>Gathered business rules for a KPI Project Performance Management System and mapped system workflows into technical verification metrics.</li>
+                                <li>Built detailed system layout wireframes via Figma to identify user experience bottlenecks prior to baseline code generation.</li>
+                                <li>Supported standard sprint lifecycle mapping inside a cross-functional Agile ecosystem.</li>
                             </ul>
                         </div>
                         <!-- ME-Tech Solution -->
                         <div class="relative">
-    <span class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[21px] top-1"></span>
-    <span class="text-slate-400 font-medium block">Aug 2025 - Jan 2026</span>
-    <span class="font-bold text-slate-900 block">Intern - QA & Software Engineer</span>
-    <span class="text-indigo-600 font-medium block mb-1">ME-Tech Solution Sdn Bhd, Cyberjaya</span>
-    <ul class="list-disc pl-4 space-y-1 text-slate-500 text-[11px] md:text-xs">
-        <li>Conducted exploratory and ad-hoc functional testing on 15+ backend endpoints to map frontend actions to system stability.</li>
-        <li>Analyzed HTTP response statuses and raw JSON payloads to verify data schema integrity and cross-module structural accuracy.</li>
-        <li>Investigated system error payloads, tracing structural validation anomalies and isolating architectural backend bugs during the development cycle.</li>
-        <li>Supported mobile module engineering using the Flutter framework, validating system inputs and UI rendering behavior against data requirements.</li>
-    </ul>
-</div>
-                        <!-- Sales Assistant -->
-                        <div class="relative">
                             <span class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[21px] top-1"></span>
-                            <span class="text-slate-400 font-medium block">2021 - 2023</span>
-                            <span class="font-bold text-slate-900 block">Sales & Customer Service Assistant</span>
-                            <span class="text-slate-500 font-medium block mb-1">Various Companies (7-Eleven, Jimart, CrimeBites, AINAA Beauty)</span>
+                            <span class="text-slate-400 font-medium block">Aug 2025 - Jan 2026</span>
+                            <span class="font-bold text-slate-900 block">Intern - QA & Software Engineer</span>
+                            <span class="text-indigo-600 font-medium block mb-1">ME-Tech Solution Sdn Bhd, Cyberjaya</span>
                             <ul class="list-disc pl-4 space-y-1 text-slate-500 text-[11px] md:text-xs">
-                                <li>Assisted customers and handled daily operations.</li>
-                                <li>Managed transactions and maintained records.</li>
+                                <li>Conducted exploratory and ad-hoc functional testing on 15+ backend endpoints to map frontend actions to system stability.</li>
+                                <li>Analyzed HTTP response statuses and raw JSON payloads to verify data schema integrity and cross-module structural accuracy.</li>
+                                <li>Investigated system error payloads, tracing structural validation anomalies and isolating architectural backend bugs during the development cycle.</li>
+                                <li>Supported mobile module engineering using the Flutter framework, validating system inputs and UI rendering behavior against data requirements.</li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CERTIFICATIONS & BADGES ====================-->
+        <section class="certifications section scroll-mt-20" id="certifications">
+            <div class="text-center space-y-2 mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-titleColor">Certifications & Credentials</h2>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">Verified Specializations</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Certificate 1: Google AI -->
+                <div class="bg-white border border-slate-200/80 rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-100 h-40 flex items-center justify-center border-b border-slate-100 relative overflow-hidden group">
+                            <img src="assets/GoogleAIProfessionalCertificate.png" alt="Google AI Professional Certificate" class="w-full h-full object-cover z-10 transition group-hover:scale-105" onerror="this.style.opacity='0'">
+                            <i class="uil uil-award text-4xl text-indigo-200 absolute"></i>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="bg-indigo-50 text-firstColor font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Specialization</span>
+                            <h3 class="font-bold text-slate-900 text-sm leading-tight">Google AI Professional Certificate</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed">Completed 7 comprehensive courses demonstrating capabilities in Data Analysis, Prompt Optimization, Code Evaluation, and responsible AI system architectures. Built a robust portfolio of 20+ functional engineering artifacts.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="bg-slate-100 text-slate-600 text-[9px] font-medium px-2 py-0.5 rounded">Data Analysis</span>
+                            <span class="bg-slate-100 text-slate-600 text-[9px] font-medium px-2 py-0.5 rounded">Prompt Engineering</span>
+                            <span class="bg-slate-100 text-slate-600 text-[9px] font-medium px-2 py-0.5 rounded">Output Evaluation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: Software Testing -->
+                <div class="bg-white border border-slate-200/80 rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-100 h-40 flex items-center justify-center border-b border-slate-100 relative overflow-hidden group">
+                            <img src="assets/IntroToSoftwareTesting.png" alt="Introduction to Software Testing" class="w-full h-full object-cover z-10 transition group-hover:scale-105" onerror="this.style.opacity='0'">
+                            <i class="uil uil-bug text-4xl text-indigo-200 absolute"></i>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="bg-emerald-50 text-emerald-700 font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Simplilearn</span>
+                                <span class="text-[10px] text-slate-400">Feb 2026</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-sm leading-tight">Introduction to Software Testing</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed">Mastered base methodologies governing the software verification lifecycle, incorporating test execution strategies, defect isolation tracking, and validation environments.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 space-y-3">
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-slate-100 text-slate-600 text-[9px] font-medium px-2 py-0.5 rounded">Software Testing</span>
+                            <span class="bg-slate-100 text-slate-600 text-[9px] font-medium px-2 py-0.5 rounded">Defect Logging</span>
+                        </div>
+                        <div class="text-[10px] text-slate-400">ID: 9816379</div>
+                        <a href="https://simpli-web.app.link/e/yvH3WjItQ3b" target="_blank" class="w-full text-center block border border-slate-200 text-slate-700 font-semibold py-1.5 rounded-lg text-xs hover:bg-slate-50 transition">Verify Credential</a>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: Data Science -->
+                <div class="bg-white border border-slate-200/80 rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-100 h-40 flex items-center justify-center border-b border-slate-100 relative overflow-hidden group">
+                            <img src="assets/IntroToDataScience.png" alt="Introduction to Data Science" class="w-full h-full object-cover z-10 transition group-hover:scale-105" onerror="this.style.opacity='0'">
+                            <i class="uil uil-chart-growth text-4xl text-indigo-200 absolute"></i>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="bg-blue-50 text-blue-700 font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Cisco Academy</span>
+                                <span class="text-[10px] text-slate-400">Feb 2026</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-sm leading-tight">Introduction to Data Science</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed">Trained in analytical frameworks targeting raw data collection operations, parsing pipelines, structural transformation patterns, and automated statistical sorting configurations.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 space-y-3">
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-slate-100 text-slate-600 text-[9px] font-medium px-2 py-0.5 rounded">Data Analysis</span>
+                            <span class="bg-slate-100 text-slate-600 text-[9px] font-medium px-2 py-0.5 rounded">Data Collection</span>
+                        </div>
+                        <a href="https://www.credly.com/badges/9e19b092-9fad-48f2-93a3-c60d674084bc/public_url" target="_blank" class="w-full text-center block bg-slate-950 text-white font-semibold py-1.5 rounded-lg text-xs hover:bg-slate-800 transition">Show Credly Badge</a>
                     </div>
                 </div>
             </div>
@@ -245,17 +318,17 @@
                 <div class="p-5 bg-white border border-slate-200/80 rounded-2xl shadow-sm text-center space-y-2">
                     <i class="uil uil-search-alt text-2xl text-firstColor block"></i>
                     <span class="font-bold text-slate-900 block">Manual Testing</span>
-                    <p class="text-slate-400 text-xs">Designing test case plans (Positive/Negative) and tracking critical bugs.</p>
+                    <p class="text-slate-400 text-xs">Designing high-coverage edge-case scenarios (Boundary & Negative tests) for web workflows.</p>
                 </div>
                 <div class="p-5 bg-white border border-slate-200/80 rounded-2xl shadow-sm text-center space-y-2">
                     <i class="uil uil-setting text-2xl text-firstColor block"></i>
                     <span class="font-bold text-slate-900 block">UI Test Automation</span>
-                    <p class="text-slate-400 text-xs">Developing automated test scripts using Selenium Java and JUnit frameworks.</p>
+                    <p class="text-slate-400 text-xs">Writing clean Page Object Model automated regressions in Selenium Java and JUnit environments.</p>
                 </div>
                 <div class="p-5 bg-white border border-slate-200/80 rounded-2xl shadow-sm text-center space-y-2 sm:col-span-2 md:col-span-1">
                     <i class="uil uil-exchange text-2xl text-firstColor block"></i>
                     <span class="font-bold text-slate-900 block">API Verification</span>
-                    <p class="text-slate-400 text-xs">Validating backend endpoints using Postman to ensure data integrity.</p>
+                    <p class="text-slate-400 text-xs">Intercepting payloads, checking response codes, and running automated assertions via Postman collections.</p>
                 </div>
             </div>
         </section>
@@ -271,7 +344,7 @@
                 <!-- Project 1 -->
                 <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                     <div class="bg-slate-100 rounded-xl h-32 flex items-center justify-center border border-slate-200 text-slate-300 relative overflow-hidden">
-                        <img src="project1.jpg" alt="Bayou Project" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                        <img src="assets/img/project1.jpg" alt="Bayou Project" class="w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
                         <i class="uil uil-image-v text-3xl absolute"></i>
                     </div>
                     <div class="md:col-span-2 space-y-2 text-xs md:text-sm">
@@ -288,7 +361,7 @@
                 <!-- Project 2 -->
                 <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                     <div class="bg-slate-100 rounded-xl h-32 flex items-center justify-center border border-slate-200 text-slate-300 relative overflow-hidden">
-                        <img src="project2.jpg" alt="AcademyBugs Project" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                        <img src="assets/img/project2.jpg" alt="AcademyBugs Project" class="w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
                         <i class="uil uil-image-v text-3xl absolute"></i>
                     </div>
                     <div class="md:col-span-2 space-y-2 text-xs md:text-sm">
@@ -304,13 +377,13 @@
                 <!-- Project 3 -->
                 <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                     <div class="bg-slate-100 rounded-xl h-32 flex items-center justify-center border border-slate-200 text-slate-300 relative overflow-hidden">
-                        <img src="project3.jpg" alt="PPMS Project" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                        <img src="assets/img/project3.jpg" alt="PPMS Project" class="w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
                         <i class="uil uil-image-v text-3xl absolute"></i>
                     </div>
                     <div class="md:col-span-2 space-y-2 text-xs md:text-sm">
-                        <span class="bg-slate-100 text-slate-700 font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Full Development</span>
+                        <span class="bg-amber-50 text-amber-700 font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Engineering & Verification</span>
                         <h3 class="font-bold text-slate-900 text-base">Project Performance Management System (PPMS)</h3>
-                        <p class="text-slate-500">Developed a web system for tracking KPI performance, conducting form input testing, and confirming data validations.</p>
+                        <p class="text-slate-500">Engineered system requirement maps, constructed workflow layouts, and managed structural data verification tests for metric compliance.</p>
                         <div class="pt-1">
                             <a href="https://drive.google.com/file/d/15MTsXVsMiSphzLSGu2eXRPsiXRmHgzN0/view?usp=sharing" target="_blank" class="bg-slate-900 text-white font-semibold px-3 py-1.5 rounded-lg text-xs inline-flex items-center gap-1">
                                 📄 Open PPMS File
@@ -322,7 +395,7 @@
                 <!-- Project 4 -->
                 <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                     <div class="bg-slate-100 rounded-xl h-32 flex items-center justify-center border border-slate-200 text-slate-300 relative overflow-hidden">
-                        <img src="project4.jpg" alt="IoT Project" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                        <img src="assets/img/project4.jpg" alt="IoT Project" class="w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
                         <i class="uil uil-image-v text-3xl absolute"></i>
                     </div>
                     <div class="md:col-span-2 space-y-2 text-xs md:text-sm">
