@@ -115,7 +115,7 @@
             </div>
         </section>
 
-        <!--==================== SKILLS ====================-->
+       <!--==================== SKILLS ====================-->
         <section class="skills section scroll-mt-20" id="skills">
             <div class="text-center space-y-2 mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-titleColor">Skills</h2>
@@ -124,30 +124,66 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- QA Skills Box -->
-                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2 text-sm md:text-base">
-                        <i class="uil uil-bug text-firstColor text-lg"></i> Testing & Quality Assurance
-                    </h3>
-                    <div class="space-y-2 text-xs md:text-sm text-slate-600">
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Manual & Automated Testing</span><span class="font-semibold text-firstColor">Intermediate</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>API Functional Testing (Postman)</span><span class="font-semibold text-firstColor">Intermediate</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>UI Web Automation (Selenium Java)</span><span class="font-semibold text-firstColor">Intermediate</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Test Planning & Defect Tracking</span><span class="font-semibold text-firstColor">Intermediate</span></div>
-                        <div class="flex justify-between py-1.5"><span>Regression & Integration Testing</span><span class="font-semibold text-firstColor">Intermediate</span></div>
+                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2 text-sm md:text-base">
+                            <i class="uil uil-bug text-firstColor text-lg"></i> Testing & Quality Assurance
+                        </h3>
+                        <!-- border-slate-100 provides high-visibility divider contrast -->
+                        <div class="space-y-1 text-xs md:text-sm text-slate-600">
+                            <div class="flex justify-between items-baseline border-b border-slate-100 py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">Manual & Automated Testing</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Intermediate</span>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-slate-100 py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">API Functional Testing (Postman)</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Intermediate</span>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-slate-100 py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">UI Web Automation (Selenium Java)</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Intermediate</span>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-slate-100 py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">Test Planning & Defect Tracking</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Intermediate</span>
+                            </div>
+                            <div class="flex justify-between items-baseline py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">Regression & Integration Testing</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Intermediate</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Technical Skills Box -->
-                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2 text-sm md:text-base">
-                        <i class="uil uil-brackets-curly text-firstColor text-lg"></i> Development & Tools
-                    </h3>
-                    <div class="space-y-2 text-xs md:text-sm text-slate-600">
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Postman, Selenium, Maven, JUnit</span><span class="font-semibold text-indigo-500">QA Ecosystem</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Figma, Git, Agile/Scrum Workflows</span><span class="font-semibold text-indigo-500">Collaboration</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>Flutter Framework, Mobile UI Layouts</span><span class="font-semibold text-indigo-500">Frontend</span></div>
-                        <div class="flex justify-between border-b border-slate-50 py-1.5"><span>PHP, Laravel API, MySQL Architecture</span><span class="font-semibold text-indigo-500">Backend</span></div>
-                        <div class="flex justify-between py-1.5"><span>JSON Validation & Relational Schemas</span><span class="font-semibold text-indigo-500">Data Validation</span></div>
+                <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2 text-sm md:text-base">
+                            <i class="uil uil-brackets-curly text-firstColor text-lg"></i> Development & Tools
+                        </h3>
+                        <div class="space-y-1 text-xs md:text-sm text-slate-600">
+                            <div class="flex justify-between items-baseline border-b border-slate-100 py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">Postman, Selenium, Maven, JUnit</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">QA Ecosystem</span>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-slate-100 py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">Figma, Git, Agile/Scrum Workflows</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Collaboration</span>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-slate-100 py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">Flutter Framework, Mobile UI Layouts</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Frontend</span>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-slate-100 py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">PHP, Laravel API, MySQL Architecture</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Backend</span>
+                            </div>
+                            <!-- items-baseline + gap protection stops wrapping from shattering layout alignment -->
+                            <div class="flex justify-between items-baseline py-2.5 gap-4">
+                                <span class="font-medium text-slate-700">JSON Validation & Relational Schemas</span>
+                                <span class="font-bold text-firstColor text-right shrink-0">Data Validation</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
